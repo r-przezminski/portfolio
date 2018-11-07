@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <header class="container">
+    <figure>
+      <img class="logo" src="./img/giphy-logo.png" alt="giphy-logo">
+      <figcaption>Find your awesome gifs!</figcaption>
+    </figure>
+  </header>
+  <form class="container">
+    <div class="control-panel">
+      <fieldset>
+        <legend>Type:</legend>
+        <input name="type" type="radio" id="gifs" value="gifs" checked>
+        <label for="gifs">Gifs</label>
+        <input name="type" type="radio" id="stickers" value="stickers">
+        <label for="stickers">Stickers</label>
+      </fieldset>
+      <fieldset>
+        <legend>Language:</legend>
+        <input name="lang" type="radio" id="english" value="en" checked>
+        <label for="english">Eenglish</label>
+        <input name="lang" type="radio" id="polish" value="pl">
+        <label for="polish">Polish</label>
+      </fieldset>
+      <fieldset>
+        <legend>Limit:</legend>
+        <input name="limit" type="radio" id="25" value="25" checked>
+        <label for="25">25</label>
+        <input name="limit" type="radio" id="50" value="50">
+        <label for="50">50</label>
+        <input name="limit" type="radio" id="75" value="75">
+        <label for="75">75</label>
+        <input name="limit" type="radio" id="100" value="100">
+        <label for="100">100</label>
+      </fieldset>
+    </div>
+    <input name="query" id="query" type="text" placeholder="Nicolas Cage :)">
+    <input type="submit" value="Find">
+  </form>
+  <!-- <section class="gifs container">
+
+  </section> -->
+  <!-- <footer>
+
+  </footer> -->
+</body>
+</html>
