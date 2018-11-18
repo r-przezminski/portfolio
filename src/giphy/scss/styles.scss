@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import './mixins.scss';
+@import './variables.scss';
 
 * {
   box-sizing: border-box;
@@ -21,7 +22,7 @@ header {
   figcaption {
     padding: 10px;
     font-size: 20px;
-    color: grey;
+    color: $grey;
   }
 
   .logo {
@@ -42,6 +43,7 @@ form {
     align-items: flex-start;
     flex-flow: row wrap;
     margin-bottom: 30px;
+    margin-top: 25px;
 
     @include media(768px) {
       margin-top: 50px;
@@ -58,10 +60,6 @@ form {
     }
   }
 
-  legend {
-  // margin-bottom: 20px;
-  }
-
   input[type=radio] {
     display: none;
   }
@@ -71,8 +69,9 @@ form {
     width: 100px;
     padding: 10px 20px 10px 20px;
     margin: 5px;
-    border: solid 1px #FB6769;
+    border: solid 1px $color-primary;
     text-align: center;
+
     &:hover {
       cursor: pointer;
     }
@@ -80,7 +79,7 @@ form {
 
   input[type=radio]:checked + label {
     color: white;
-    background-color: #FB6769;
+    background-color: $color-primary;
   }
 
   input[type=text] {
@@ -89,41 +88,76 @@ form {
     line-height: 32px;
     padding-left: 10px;
     outline: none;
-    border: solid 1px #FB6769;
+    border: solid 1px $color-primary;
     border-radius: 2%;
     transition: box-shadow ease-in-out .2s;
+    color: $grey;
+
+    @include media(768px) {
+      width: 80%;
+    }
   }
 
   input[type=text]:focus {
-    box-shadow: -2px -2px 30px -5px #FB6769;
+    box-shadow: -2px -2px 30px -5px $color-primary;
   }
 
   input[type=submit] {
-    background-color: #ffffff;
-    color: #FB6769;
+    background-color: $white;
+    color: $color-primary;
     width: 25%;
     margin-left: 4%;
     line-height: 30px;
     outline: none;
-    border: solid 1px #FB6769;
+    border: solid 1px $color-primary;
     border-radius: 2%;
     transition: all ease-in-out .2s;
+
     &:hover {
       cursor: pointer;
-      background-color: #FB6769;
-      color: #ffffff;
+      background-color: $color-primary;
+      color: $white;
+    }
+
+    @include media(768px) {
+      width: 15%;
     }
   }
 }
 
 .gifs {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   flex-flow: row wrap;
   margin-top: 50px;
+
+  img {
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
-.gif {
-  padding: 10px;
+.gif-modal {
+  .gif-modal__mask {
+    position: fixed;
+		z-index: 10;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+    background-color: $modal-mask;
+  }
+
+  .gif-modal__body {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.hidden {
+  display: none;
 }
